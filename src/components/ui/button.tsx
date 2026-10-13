@@ -9,6 +9,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        cafe: "bg-primary text-primary-foreground hover:bg-primary/85 rounded-none",
+        cafeOutline: "border border-border bg-transparent text-foreground hover:bg-muted rounded-none",
+        hero: "bg-hero-foreground text-hero-ink hover:bg-hero-foreground/90 rounded-none",
+        heroOutline: "border border-hero-foreground/40 text-hero-foreground hover:bg-hero-foreground/10 rounded-none",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
