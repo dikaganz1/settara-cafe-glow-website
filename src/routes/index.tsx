@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, Check, Clock3, Coffee, Instagram, MapPin, Menu
 import { Button } from "@/components/ui/button";
 import cafeImage from "@/assets/settara-cafe.jpg";
 import coffeeImage from "@/assets/settara-coffee.jpg";
+import logoDark from "@/assets/settara-logo-dark.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -30,7 +31,7 @@ function Index() {
   }
   return <main>
     <header className="site-header">
-      <a href="#" className="wordmark" aria-label="Settara beranda">settara<span>.</span><small>CAFE & INN</small></a>
+      <a href="#" className="brand" aria-label="Settara beranda"><img src={logoDark.url} alt="Logo Settara" width={238} height={238} className="brand-mark" /><span className="brand-name">settara<span>.</span><small>CAFE & INN</small></span></a>
       <nav className="desktop-nav" aria-label="Navigasi utama">{navigation.map(item => <a key={item.name} href={item.href}>{item.name}</a>)}</nav>
       <Button variant="cafeOutline" asChild className="header-contact"><a href={whatsapp} target="_blank" rel="noreferrer">Mari Singgah <ArrowUpRight /></a></Button>
       <Button variant="ghost" size="icon" className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Tutup navigasi" : "Buka navigasi"} aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</Button>
@@ -65,6 +66,6 @@ function Index() {
 
     <section id="kunjungi" className="visit-section"><div className="section visit-inner"><div className="visit-intro"><div className="eyebrow"><span className="section-number">04</span> TEMUKAN SETTARA</div><h2>Pintu kami terbuka.<br /><em>Mari singgah.</em></h2><p>Datang sendiri, berdua, atau bersama cerita-cerita baru.<br />Sampai bertemu di Settara.</p><Button variant="hero" size="lg" asChild><a href={maps} target="_blank" rel="noreferrer">Petunjuk Arah <ArrowUpRight /></a></Button></div><div className="visit-details"><div className="detail-row"><MapPin /><div><span>ALAMAT</span><p>Gg. Menur, Bantul Karang, Ringinharjo,<br />Kec. Bantul, Kabupaten Bantul,<br />Daerah Istimewa Yogyakarta 55713</p><a href={maps} target="_blank" rel="noreferrer">484F+32 Ringinharjo <ArrowUpRight size={13} /></a></div></div><div className="detail-row"><Clock3 /><div><span>WAKTU SINGGAH</span><p>Sampai pukul 00.00</p></div></div><div className="detail-row"><Phone /><div><span>HUBUNGI KAMI</span><a className="phone-link" href="tel:+6281327265166">0813-2726-5166</a></div></div><div className="visit-links"><a href={whatsapp} target="_blank" rel="noreferrer"><MessageCircle size={16} /> WhatsApp <ArrowUpRight size={15} /></a><Button variant="heroOutline" size="sm" onClick={share}>{shared ? <Check /> : <Share2 />}{shared ? "Tautan disalin" : "Bagikan tempat"}</Button></div></div></div></section>
 
-    <footer className="site-footer"><a href="#" className="wordmark">settara<span>.</span><small>CAFE & INN</small></a><span>Secangkir kopi. Sejenak cerita.</span><a href="https://www.instagram.com/settara.caffein/" target="_blank" rel="noreferrer" aria-label="Instagram Settara"><Instagram size={19} /><ArrowUpRight size={16} /></a><div className="footer-bottom"><span>© 2026 Settara cafe&inn</span><span>MADE FOR SLOW MOMENTS.</span><a href="#">Kembali ke atas ↑</a></div></footer>
+    <footer className="site-footer"><a href="#" className="brand"><img src={logoDark.url} alt="" width={238} height={238} className="brand-mark" /><span className="brand-name">settara<span>.</span><small>CAFE & INN</small></span></a><span>Secangkir kopi. Sejenak cerita.</span><a href="https://www.instagram.com/settara.caffein/" target="_blank" rel="noreferrer" aria-label="Instagram Settara"><Instagram size={19} /><ArrowUpRight size={16} /></a><div className="footer-bottom"><span>© 2026 Settara cafe&inn</span><span>MADE FOR SLOW MOMENTS.</span><a href="#">Kembali ke atas ↑</a></div></footer>
   </main>;
 }
